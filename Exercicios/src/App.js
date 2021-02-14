@@ -1,12 +1,14 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import Aleatorio from './components/Aleatorio';
+import Titulo from './components/Titulo';
+// import Aleatorio from './components/Aleatorio';
 // import Primeiro from './components/Primeiro';
 // import CompPadrao, {Comp1, Comp2} from './components/Multi';
-import MinMax from './components/MinMax';
+// import MinMax from './components/MinMax';
 export default () => (
   <View style={style.App}>
-    <Aleatorio min={5} max={10} />
+    <Titulo principal="1234" secundario="4321" />
+    {/* <Aleatorio min={5} max={10} /> */}
     {/* EXPLICAÇÃO:
     passando entre {} é entendido como JS
     portanto, o texto 3 dentro das chaves se torna
