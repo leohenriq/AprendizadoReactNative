@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text} from 'react-native';
 
-export default function Comp() {
+function Comp() {
   return <Text>Comp Oficial</Text>;
 }
 
@@ -14,3 +14,4 @@ function Comp2() {
 }
 
 export {Comp1, Comp2};
+export default Comp;
