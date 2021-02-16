@@ -1,6 +1,8 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
-import ContadorV2 from './components/contador/ContadorV2';
+import {SafeAreaView, StyleSheet} from 'react-native';
+import ParImpar from './components/ParImpar';
+// import Diferenciar from './components/Diferenciar';
+// import ContadorV2 from './components/contador/ContadorV2';
 // import Pai from './components/indireta/Pai';
 // import Pai from './components/direta/Pai';
 // import Contador from './components/Contador';
@@ -11,27 +13,31 @@ import ContadorV2 from './components/contador/ContadorV2';
 // import CompPadrao, {Comp1, Comp2} from './components/Multi';
 // import MinMax from './components/MinMax';
 export default () => (
-  <View style={style.App}>
-    <ContadorV2 />
-    {/* <Pai /> */}
-    {/* <Pai /> */}
-    {/* <Contador inicial={100} />
-    <Contador inicial={100} passo={13} /> */}
+  <SafeAreaView style={style.App}>
+    <ParImpar num={0} />
+    {/* 
+    <Diferenciar />
+    <ContadorV2 /> 
+    <Pai /> 
+    <Pai /> 
+    <Contador inicial={100} />
+    <Contador inicial={100} passo={13} /> 
+    <Button /> 
+    <Titulo principal="1234" secundario="4321" /> 
+    <Aleatorio min={5} max={10} /> */}
 
-    {/* <Button /> */}
-    {/* <Titulo principal="1234" secundario="4321" /> */}
-    {/* <Aleatorio min={5} max={10} /> */}
-    {/* EXPLICAÇÃO:
+    {/*EXPLICAÇÃO:
     passando entre {} é entendido como JS
     portanto, o texto 3 dentro das chaves se torna
     numero e com aspas se torna texto */}
     {/* <MinMax min={3} max={20} />
     <MinMax min="5" max="40" /> */}
+
     {/* <CompPadrao />
     <Comp1 />
     <Comp2 />
     <Primeiro /> */}
-  </View>
+  </SafeAreaView>
 );
 
 const style = StyleSheet.create({
