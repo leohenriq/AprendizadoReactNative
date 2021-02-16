@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import Pai from './components/indireta/Pai';
+import ContadorV2 from './components/contador/ContadorV2';
+// import Pai from './components/indireta/Pai';
 // import Pai from './components/direta/Pai';
 // import Contador from './components/Contador';
 // import Button from './components/Button';
@@ -11,7 +12,8 @@ import Pai from './components/indireta/Pai';
 // import MinMax from './components/MinMax';
 export default () => (
   <View style={style.App}>
-    <Pai />
+    <ContadorV2 />
+    {/* <Pai /> */}
     {/* <Pai /> */}
     {/* <Contador inicial={100} />
     <Contador inicial={100} passo={13} /> */}
