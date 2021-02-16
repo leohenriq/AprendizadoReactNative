@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import Contador from './components/Contador';
+import Pai from './components/direta/Pai';
+// import Contador from './components/Contador';
 // import Button from './components/Button';
 // import Titulo from './components/Titulo';
 // import Aleatorio from './components/Aleatorio';
@@ -9,8 +10,9 @@ import Contador from './components/Contador';
 // import MinMax from './components/MinMax';
 export default () => (
   <View style={style.App}>
-    <Contador inicial={100} />
-    <Contador inicial={100} passo={13} />
+    <Pai />
+    {/* <Contador inicial={100} />
+    <Contador inicial={100} passo={13} /> */}
 
     {/* <Button /> */}
     {/* <Titulo principal="1234" secundario="4321" /> */}
