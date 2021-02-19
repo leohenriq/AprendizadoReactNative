@@ -1,6 +1,8 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
-import ParImpar from './components/ParImpar';
+import { SafeAreaView, StyleSheet } from 'react-native';
+import Familia from './components/relacao/Familia';
+import Membro from './components/relacao/Membro';
+// import ParImpar from './components/ParImpar';
 // import Diferenciar from './components/Diferenciar';
 // import ContadorV2 from './components/contador/ContadorV2';
 // import Pai from './components/indireta/Pai';
@@ -14,8 +16,16 @@ import ParImpar from './components/ParImpar';
 // import MinMax from './components/MinMax';
 export default () => (
   <SafeAreaView style={style.App}>
-    <ParImpar num={0} />
+    <Familia>
+      <Membro nome="Leonardo" sobrenome="Henrique" />
+      <Membro nome="Marcio" sobrenome="Henrique" />
+    </Familia>
+    <Familia>
+      <Membro nome="Giovanna" sobrenome="Gonçalves" />
+      <Membro nome="Lidia" sobrenome="Gonçalves" />
+    </Familia>
     {/* 
+    <ParImpar num={0} />
     <Diferenciar />
     <ContadorV2 /> 
     <Pai /> 
