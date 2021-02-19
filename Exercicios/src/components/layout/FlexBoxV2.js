@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import Quadrado from './Quadrado'
 export default props => {
     return (
-        <View style={style.FlexV1}>
+        <View style={style.FlexV2}>
             <Quadrado cor="#900" />
             <Quadrado cor="#090" />
             <Quadrado cor="#009" />
@@ -12,9 +12,11 @@ export default props => {
 }
 
 const style = StyleSheet.create({
-    FlexV1: {
-        flexGrow: 1,
-        justifyContent: "space-between",
+    FlexV2: {
+        flex: 1,
+        width: "100%",
+        alignItems: "center",
+        justifyContent: "space-evenly",
         backgroundColor: "#000",
     }
 })
