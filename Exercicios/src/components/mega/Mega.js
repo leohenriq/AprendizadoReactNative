@@ -6,7 +6,7 @@ export default class Mega extends React.Component {
         qtdeNumeros: this.props.qtdeNumeros
     }
 
-    alterarQtdeNumero(qtde) {
+    alterarQtdeNumero = (qtde) => {
         this.setstate({ qtdeNumeros: qtde })
     }
 
@@ -19,6 +19,8 @@ export default class Mega extends React.Component {
                 {this.state.qtdeNumeros}
                 </Text>
                 <TextInput
+                    keyboardType={'numeric'}
+                    style={{ borderBottomWidth: 1 }}
                     placeholder="Qtde de Números"
                     value={this.state.qtdeNumeros}
                     onChangeText={this.alterarQtdeNumero}
