@@ -4,9 +4,11 @@ import Quadrado from './Quadrado'
 export default props => {
     return (
         <View style={style.FlexV2}>
-            <Quadrado cor="#900" />
-            <Quadrado cor="#090" />
-            <Quadrado cor="#009" />
+            <Quadrado cor="#ff801a" />
+            <Quadrado cor="#50d1f6" />
+            <Quadrado cor="#dd22c1" />
+            <Quadrado cor="#8312ed" />
+            <Quadrado cor="#26c9a7" />
         </View>
     )
 }
