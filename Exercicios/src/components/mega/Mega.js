@@ -17,6 +17,7 @@ export default class Mega extends React.Component {
         return nums.includes(novo) ? this.gerarNumeroNaoContido(nums) : novo;
     }
 
+    // programacao funcional
     gerarNumeros = () => {
         const numeros = Array(this.state.qtdeNumeros)
             .fill()
