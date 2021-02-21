@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
-import { Text, TextInput, Button } from 'react-native';
+import { Text, TextInput, Button, View, StyleSheet } from 'react-native';
 import Estilo from '../estilo'
+
+import Numero from './Numero'
 export default class Mega extends React.Component {
     state = {
         qtdeNumeros: this.props.qtdeNumeros,
@@ -9,7 +11,7 @@ export default class Mega extends React.Component {
 
     alterarQtdeNumero = (qtde) => {
         // '+' converte string pra number
-        this.setstate({ qtdeNumeros: +qtde })
+        this.setState({ qtdeNumeros: +qtde })
     }
 
     gerarNumeroNaoContido = nums => {
@@ -26,6 +28,12 @@ export default class Mega extends React.Component {
         this.setState({ numeros })
     }
 
+    exibirNumeros = () => {
+        const nums = this.state.numeros;
+        return nums.map(num => {
+            return <Numero key={num} num={num} />
+        })
+    }
     // funcao q vai renderizar os itens na tela
     render() {
         return (
@@ -41,10 +49,19 @@ export default class Mega extends React.Component {
                     onChangeText={this.alterarQtdeNumero}
                 />
                 <Button title="Gerar" onPress={this.gerarNumeros} />
-                <Text>
-                    {this.state.numeros.join(',')}
-                </Text>
+                <View style={style.View}>
+                    {this.exibirNumeros()}
+                </View>
             </Fragment>
         )
     }
 }
+
+const style = StyleSheet.create({
+    View: {
+        marginTop: 20,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center'
+    }
+})
