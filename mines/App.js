@@ -2,12 +2,13 @@ import React from 'react';
 import {
   StyleSheet,
   View,
-  Text
+  Text,
+  Alert
 } from 'react-native';
 
 import params from './src/params'
 import MineField from './src/components/MineField'
-import { createMinedBoard } from './src/functions'
+import { createMinedBoard, openField, cloneBoard, hadExplosion, wonGame, showMines, invertFlag } from './src/functions'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -19,7 +20,9 @@ export default class App extends React.Component {
     const cols = params.getColumnsAmount()
     const rows = params.getRowsAmount()
     return {
-      board: createMinedBoard(cols, rows, this.minesAmount())
+      board: createMinedBoard(cols, rows, this.minesAmount()),
+      won: false,
+      lost: false
     }
   }
 
@@ -29,15 +32,45 @@ export default class App extends React.Component {
     return Math.ceil(cols * rows * params.difficultLevel)
   }
 
+  onOpenField = (row, column) => {
+    const board = cloneBoard(this.state.board)
+    openField(board, row, column)
+    const lost = hadExplosion(board)
+    const won = wonGame(board)
+
+    if (lost) {
+      showMines(board)
+      Alert.alert('Perdeu', 'Perdedor')
+    }
+    if (won) {
+      Alert.alert('Ganhou', 'Ganhador')
+    }
+    this.setState({
+      board,
+      lost,
+      won
+    })
+  }
+
+  onSelectField = (row, column) => {
+    const board = cloneBoard(this.state.board)
+    invertFlag(board, row, column)
+    const won = wonGame(board)
+
+    if (won) {
+      Alert.alert('Ganhou', 'Ganhador')
+    }
+    this.setState({
+      board,
+      won
+    })
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Iniciando o Mines!</Text>
-        <Text style={styles.instructions}>Tamanho da grade:
-        {params.getRowsAmount()}x{params.getColumnsAmount()}</Text>
-
         <View style={styles.board}>
-          <MineField board={this.state.board} />
+          <MineField board={this.state.board} onOpenField={this.onOpenField} onSelectField={this.onSelectField} />
         </View>
       </View>
     )
@@ -48,8 +81,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-end'
-  },
-  welcome: {
   },
   board: {
     alignItems: 'center',
