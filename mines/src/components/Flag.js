@@ -1,6 +1,5 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native';
-
+import { View, StyleSheet } from 'react-native'
 
 export default props => {
     return (
@@ -12,6 +11,7 @@ export default props => {
         </View>
     )
 }
+
 const styles = StyleSheet.create({
     container: {
         marginTop: 2,
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         width: 10,
         backgroundColor: '#222',
         marginLeft: 5,
-        marginTop: 12
+        marginTop: 12,
     },
     flagpoleBigger: {
         height: 28,
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     flagBigger: {
         height: 10,
         width: 14,
-        marginLeft: 3
+        marginLeft: 3,
     },
     base1Bigger: {
         height: 4,
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     base2Bigger: {
         height: 4,
         width: 20,
-        marginTop: 8,
-        marginLeft: 24,
+        marginLeft: 8,
+        marginTop: 24
     }
 })
